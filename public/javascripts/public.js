@@ -78,7 +78,8 @@ $( function( ) {
 	$.deck( '.slide' );
 	// Sockets for Chat and Presenter control
 	var socket_url = window.location.protocol + "//" + window.location.host;
-	Chat.socket = io.connect( socket_url );
+	//Chat.socket = io.connect( socket_url );
+	Chat.socket = new io.Socket(null, {port: 80, rememberTransport: false}); 
 	Chat.socket.on( 'connect',			Chat.connect );
 	Chat.socket.on( 'chat/announcement',Chat.announcement );
 	Chat.socket.on( 'chat/nicknames',	Chat.print_nicks );
