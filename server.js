@@ -1,5 +1,5 @@
 // Pathing
-require.paths.unshift('./');
+require.paths.unshift('./node_modules');
 
 var appdir = { "root"   : __dirname };
     appdir[ 'public' ]  = appdir.root + "/public";
@@ -103,8 +103,8 @@ app.configure( 'production', function( ) {
 // Start Servers
 
   // Express
-  app.listen( 3000 );
+  app.listen( 12772 );
   console.log( "Express server listening on port %d in %s mode", app.address().port, app.settings.env );
 
   // Socket.io
-  require( 'push_server.js' )( app );
+  require( './push_server.js' )( app );
