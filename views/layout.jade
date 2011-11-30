@@ -1,0 +1,28 @@
+!!!
+html 
+	head
+		title=title
+		meta( name="author", content="Russell Madsen" )
+		link( rel="stylesheet", type="text/css", href="/stylesheets/base.css" )
+		block scripts
+			
+		script( src="/lib/modernizr.custom.js" )
+		
+	body( class="deck-container")
+
+		block content
+			!= body	
+		
+		include layouts/chat
+				
+		#footer
+			script( src="/socket.io/socket.io.js" )
+			script( src="/lib/jquery-1.7.min.js" )
+			script( src="/lib/deckjs/core/deck.core.js" )
+			script( src="/lib/notificon.min.js" )
+			
+			block foot
+				script( src="/lib/deckjs/extensions/hash/deck.hash.js" )
+				script( src="/lib/deckjs/extensions/scale/deck.scale.js" )
+				//- Specific to this page
+				script( src="/javascripts/public.js" )

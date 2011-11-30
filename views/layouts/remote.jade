@@ -1,0 +1,17 @@
+extends ../layout
+
+block scripts
+	meta( name="description", content="Node: JavaScript in your back end... PEEEEYAAAAAAH!" )
+	link( rel="stylesheet", type="text/css", href="/stylesheets/deck/remote.css" )
+
+block content
+	!= body
+
+block foot
+	script( src="/lib/deckjs/extensions/hash/deck.hash.js" )
+	script( src="/lib/deckjs/extensions/menu/deck.menu.js" )
+	script( src="/lib/deckjs/extensions/goto/deck.goto.js" )
+	script( src="/lib/deckjs/extensions/status/deck.status.js" )
+	script( src="/lib/deckjs/extensions/scale/deck.scale.js" )
+	//- Specific to this layout
+	script( src="/javascripts/remote.js" )

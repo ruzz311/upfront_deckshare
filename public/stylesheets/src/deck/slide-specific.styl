@@ -1,0 +1,51 @@
+.deck-container
+	
+	> .slide
+		background-color: transparent
+		background-image: none
+		background-repeat: no-repeat
+		background-position: center center
+		background-attachment: fixed
+		background-size: cover
+		h1
+			margin: 25% 0 0 10%
+			text-shadow: 2px 2px 5px rgba( 0,0,0, 0.3 )
+		&.intro
+			background-image: url( '/images/nodejs-1280x1024.png' )
+
+		&.logo1 
+			background-image: url( '/images/nodejs-green-logo.png' )
+			background-color: rgba( 128, 190, 88, 1 )
+			background-size: initial
+			background-position: 30% center
+			h1
+				margin-top: 0%
+				margin-left: 45%
+		&.logo2
+			h1
+				margin-top: 0%
+				margin-left: 10%
+		&#complete
+			background-color: rgba( 128, 190, 88, 1 ) 
+			background-image: url( '/images/nodejs-green-logo.png' )
+			background-position: bottom center
+			background-size: initial
+			h2
+				color: #fff
+				border-bottom-color: rgba( 63, 65, 59, 1 )
+				text-shadow: 3px 3px 3px rgba( 0,0,0, 0.3 )
+			a
+				color: #fff
+				font-weight: 700
+
+		&.on-slide-complete
+			::-moz-selection
+				background: rgba( 63, 65, 56, 1 )!important
+				color: #fff !important
+			::selection
+				background: rgba( 63, 65, 56,1 )!important
+				color: #fff!important
+
+	#tools-express-features
+		.features
+			float left

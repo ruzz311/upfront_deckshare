@@ -1,0 +1,84 @@
+
+.deck-container 
+	color: #fff
+	font-family: "Helvetica Neue", sans-serif
+	font-size: 1.25em
+	gradient_brown()
+	
+	.slide 
+		background: transparent
+		h1 
+			color: #fff
+		h2 
+			color: $rgba_green
+			border-bottom-color: $rgba_brown_medium
+		h3 
+			color: #fff
+		pre 
+			background: rgba( 255, 255, 255, 0.9 )
+			border: .5em solid $rgba_brown_dark
+		code 
+			color: #888
+		blockquote 
+			font-size:2em
+			font-style:italic
+			padding:1em 2em
+			color: #000
+			border-left:5px solid $border_color
+			p 
+				margin:0
+			cite 
+				font-size:.5em
+				font-style:normal
+				font-weight:bold
+				color: #888
+			
+		::-moz-selection
+			background: $rgba_green 
+			color: #fff 
+		::selection
+			background: $rgba_green  
+			color: #fff
+
+		a 
+			&, &:hover, &:focus, &:active, &:visited 
+				color: rgba(139, 200, 75, 1)
+				text-decoration:none
+			
+			&:hover, &:focus 
+				text-decoration:underline
+
+	.deck-prev-link, .deck-next-link 
+		background: $border_color
+		font-family:serif // sans-serif arrows x-browser fail
+		
+		&, &:hover, &:focus, &:active, &:visited 
+			color:#fff
+		
+		&:hover, &:focus
+			background: $rgba_green
+			color: $rgba_brown_dark
+			text-decoration:none
+
+	.deck-status 
+		font-size: 0.6666em
+	
+	&.deck-menu 
+		.slide 
+			background: #eee
+		
+		.deck-current, .no-touch & .slide:hover 
+			background: #ddf
+
+	.goto-form 
+		background: $border_color
+		box-shadow: 1px 1px 0 rgba( 225, 225, 225, 0.9 ), -1px -1px 0 rgba( 0,0,0, 0.7 )
+
+		label
+			text-transform: uppercase
+		input 
+			border-radius: 10px
+			border-radius: 10px
+
+/* SLIDE SPECIFIC STYLING */
+@import "slide-specific" 

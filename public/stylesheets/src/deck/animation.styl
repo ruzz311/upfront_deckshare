@@ -1,0 +1,50 @@
+/*- animations -*/
+.csstransitions.csstransforms 
+	.deck-container .slide 
+		transition-property: transform, -webkit-transform
+		transition-duration: .8s, 0.4s, 0.4s
+		transition-timing-function: linear
+	
+	.deck-container:not(.deck-menu) 
+		> .slide 
+			position: absolute
+			top: 0
+			left: 0
+			box-sizing: border-box
+			width: 100%
+			padding: 0 48px
+			
+			.slide 
+				position: relative
+				left: 0
+				top: 0
+				opacity: 0
+				transform: scale( .5, .5, .5 )
+			
+			.deck-before, .deck-previous 
+				opacity: 0.4
+				-webkit-transform: translate( -200%, 0, -20% )
+			
+			.deck-current 
+				opacity: 1
+				-webkit-transform: scale( 1, 1, 1 ), translate( 0, 0, 0 )
+				transform: scale( 1, 1, 1 ), translate( 0, 0, 0 )
+			
+		> .deck-previous, > .deck-before, > .deck-next, > .deck-after 
+			opacity: 0
+			-webkit-transform: scale( .5, .5, .5 ), translate( 200%, 0, 0 )
+			transform: scale( .5, .5, .5 ), translate( 200%, 0, 0 )
+			pointer-events: none
+		
+		> .deck-before, > .deck-previous 
+			.slide 
+				visibility:visible
+			
+		> .deck-child-current 
+			opacity: 1
+			visibility:visible
+			pointer-events: auto
+			
+			.deck-next, .deck-after 
+				visibility:hidden
+			

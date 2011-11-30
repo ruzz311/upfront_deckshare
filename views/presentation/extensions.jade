@@ -1,0 +1,15 @@
+a( href="#", class="deck-prev-link", title="Previous" ) &#8592;
+a( href="#", class="deck-next-link", title="Next" ) &#8594;
+
+p( class="deck-status" )
+	span( class="deck-status-current" )
+	|  /
+	span( class="deck-status-total" )
+
+form( action=".", method="get", class="goto-form" )
+	label( for="goto-slide" ) Go to slide:
+	input( type="text", name="slidenum", id="goto-slide", list="goto-datalist" )
+	datalist( id="goto-datalist" )
+	input( type="submit", value="Go" )
+
+a( href=".", title="Permalink to this slide", class="deck-permalink" ) #
