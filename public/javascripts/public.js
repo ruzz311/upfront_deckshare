@@ -60,8 +60,8 @@ var Chat = {
 	},
 	connect : function() {
 		$('#chat').addClass('connected');
-		if( Chat.nickname === undefined )
-			Chat.generate_nick();
+		//if( Chat.nickname === undefined )
+		//	Chat.generate_nick();
 	},
 	reconnect : function ( nicknames ) {
 		$('#lines').empty();
@@ -101,9 +101,6 @@ $( function( ) {
 	// dom manipulation
 	$('#set-nickname').submit( Chat.set_nick );
 	$('#send-message').submit( Chat.send_message );
-	$('#nicknames .me').live( 'click', function(){
-		$( '#chat' ).removeClass( 'nickname-set' );
-	});
 	$('button.cancel').click( function(e) {
 		e.preventDefault();
 		Chat.clear();
