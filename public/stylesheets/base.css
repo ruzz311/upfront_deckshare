@@ -240,17 +240,27 @@ button.focus {
   z-index: 200;
 }
 #chatmenu .toggle {
+  color: #fff;
   cursor: pointer;
   display: inline-block;
+  position: relative;
   opacity: 0.4;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+  text-decoration: none;
   -webkit-transition: opacity 0.4s linear;
   -moz-transition: opacity 0.4s linear;
   transition: opacity 0.4s linear;
+  width: 72px;
+  height: 72px;
 }
 #chatmenu .toggle:hover {
   opacity: 1;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+}
+#chatmenu .toggle .count {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 /*= CODE-COLORING =*/
 .deck-container .gist {

@@ -12,7 +12,6 @@ module.exports = function( app ) {
 
     socket.on('chat/user message', function( msg ) {
       socket.broadcast.emit( 'chat/user message', socket.nickname, msg );
-      console.log( "   ===== User("+ socket.nickname +") sent message: \""+ msg +"\"");
     });
 
     socket.on('chat/nickname', function( nick, fn ) {
@@ -23,21 +22,6 @@ module.exports = function( app ) {
         nicknames[ nick ] = socket.nickname = nick;
         socket.broadcast.emit( 'chat/announcement', nick + ' connected');
         io.sockets.emit( 'chat/nicknames', nicknames );
-        console.log( "===== User logged on or reconnected.  Users online: \n" );
-        console.log( nicknames );
-        console.log( "" );
-      }
-    });
-
-    socket.on('chat/change nickname', function( oldnick, newnick, fn ) {
-      console.log( "===== chat/change nickname from "+oldnick+" to "+nick );
-      if ( nicknames[ nick ] && ( socket.nickname == oldnick ) ) {
-        fn( false );
-        nicknames[ nick ] = socket.nickname = nick;
-        socket.broadcast.emit( 'chat/announcement', nick + ' connected');
-        io.sockets.emit( 'chat/nicknames', nicknames );
-      } else {
-        fn( true );
       }
     });
 
@@ -45,9 +29,13 @@ module.exports = function( app ) {
       if ( !socket.nickname ) return;
       delete nicknames[ socket.nickname ];
 
-      console.log( "   ===== User("+ socket.nickname +") disconnected\n" );
       socket.broadcast.emit( 'chat/announcement', socket.nickname + ' disconnected' );
       socket.broadcast.emit( 'chat/nicknames', nicknames );
+    });
+
+    socket.on( 'deck/change', function( slideinfo ) {
+      socket.broadcast.emit( 'chat/announcement', slideinfo.msg );
+      socket.broadcast.emit( 'deck/slide change', slideinfo.to );
     });
     
   });
