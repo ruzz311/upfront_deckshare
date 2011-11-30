@@ -58,7 +58,8 @@ app.configure( 'development', function( ) {
 
 app.configure( 'production', function( ) {
   app.set( 'view options', { pretty: false });
-  app.use( express.errorHandler() ); 
+  //app.use( express.errorHandler() ); 
+  app.use( express.errorHandler({ dumpExceptions: true, showStack: true }) ); 
 });
 
 // Helpers
