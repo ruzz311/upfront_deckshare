@@ -72,13 +72,22 @@ var Chat = {
 	error : function( e ) { Chat.message('System', e ? e : 'A unknown error occurred'); }
 };
 
+var DECK = {
+	init : function(){
+		onslidechange : DECK.notify_deck('Deck view updated');
+	},
+	notify_chat : function( msg ){
+		Chat.message('System', msg);
+	}
+}
+
 $( function( ) {
 
 	// Deck initialization
 	$.deck( '.slide' );
 	// Sockets for Chat and Presenter control
 	var socket_url = window.location.protocol + "//" + window.location.host;
-	//Chat.socket = io.connect( );
+	Chat.socket = io.connect( );
 	//Chat.socket = io.connect( socket_url );
 	//Chat.socket = new io.connect(null, {port: 80, rememberTransport: false}); 
 	Chat.socket.on( 'connect',			Chat.connect );
