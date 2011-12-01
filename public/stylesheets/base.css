@@ -15,11 +15,11 @@
 #messages p:nth-child(even){background:#fafafa}
 #messages #nicknames{background:#ccc;padding:1% 1% 2%;font:.5em Helvetica,Arial;position:absolute;top:0;right:0;bottom:14%;left:70%;overflow-x:auto;}
 #messages #nicknames::-webkit-scrollbar{width:6px;height:6px}
-#messages #nicknames::-webkit-scrollbar-button:start:decrement,#messages #nicknames ::-webkit-scrollbar-button:end:increment{display:block;height:10px}
-#messages #nicknames::-webkit-scrollbar-button:vertical:increment{background-color:#fff}
-#messages #nicknames::-webkit-scrollbar-track-piece{background-color:#fff;-webkit-border-radius:3px}
-#messages #nicknames::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#ccc;-webkit-border-radius:3px}
-#messages #nicknames::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#fff;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-button:start:decrement,#messages #nicknames ::-webkit-scrollbar-button:end:increment{display:none;height:10px}
+#messages #nicknames::-webkit-scrollbar-button:vertical:increment{background-color:#8ac147}
+#messages #nicknames::-webkit-scrollbar-track-piece{background-color:#8ac147;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#514c3c;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#8ac147;-webkit-border-radius:3px}
 #messages #nicknames span{color:#000;display:block;width:100%}
 #messages #nicknames b{display:block;color:#333;padding:3px 6px;text-shadow:0 1px 0 #666;width:auto;}
 #messages #nicknames b.me{cursor:pointer;color:#fff;background:#999;margin-right:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;text-shadow:0 1px 0 #666;}
@@ -27,10 +27,10 @@
 #messages #lines{height:100%;width:70%;color:#000;overflow:auto;overflow-x:hidden;overflow-y:auto;}
 #messages #lines::-webkit-scrollbar{width:6px;height:6px}
 #messages #lines::-webkit-scrollbar-button:start:decrement,#messages #lines ::-webkit-scrollbar-button:end:increment{display:block;height:10px}
-#messages #lines::-webkit-scrollbar-button:vertical:increment{background-color:#fff}
-#messages #lines::-webkit-scrollbar-track-piece{background-color:#fff;-webkit-border-radius:3px}
-#messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#ccc;-webkit-border-radius:3px}
-#messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#fff;-webkit-border-radius:3px}
+#messages #lines::-webkit-scrollbar-button:vertical:increment{background-color:#8ac147}
+#messages #lines::-webkit-scrollbar-track-piece{background-color:#8ac147;-webkit-border-radius:3px}
+#messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#514c3c;-webkit-border-radius:3px}
+#messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#8ac147;-webkit-border-radius:3px}
 #send-message{background:#fff;position:relative;}
 #send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:72%;}
 #send-message input:focus{outline:0}
