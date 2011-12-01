@@ -11,78 +11,72 @@ section#helloNode.slide.logo2
 	h1 Hello, my <br/>name is...
 
 section#helloNode-evented.slide
-	blockquote	
-		h2 Hello, my name is...
-		h3 Evented Server
-		ul
-			li.slide Current version: 0.6.3 (stable)
-			li.slide V8 implementation - fast!
-			li.slide Node is nearly non-blocking through callbacks
+	h2 Hello, my name is...
+	h3 Evented Server
+	ul
+		li.slide Current version: 0.6.3 (stable)
+		li.slide V8 implementation - fast!
+		li.slide Node is nearly non-blocking through callbacks
 
 section#helloNode-evented-example.slide
-	blockquote
-		h2 Evented = Callback City
-		article.slide
-			script( src="https://gist.github.com/1413886.js?file=jquery-callback.js" )
+	h2 Evented = Callback City
+	article.slide
+		script( src="https://gist.github.com/1413886.js?file=jquery-callback.js" )
 
-		article.slide
-			script( src="https://gist.github.com/1414059.js?file=file-list.js" )
-			
+	article.slide
+		script( src="https://gist.github.com/1414059.js?file=file-list.js" )
+		
 section#helloNode-install.slide	
-	blockquote
-		h2 Hello, I make it easy to...
-		ul
-			li nvm now, thank yourself later ( #{ "ruby guys know what's up" } )
-			li Package files for easy dependency tracking
-			li Simple server example now what?
+	h2 Hello, I make it easy to...
+	ul
+		li nvm now, thank yourself later ( #{ "ruby guys know what's up" } )
+		li Package files for easy dependency tracking
+		li So I've looked at the server example.  Now what?
 
 section#helloNode-module.slide
-	blockquote
-		h2 Modules
-		article
-			script(	src="https://gist.github.com/1414127.js?file=module-example.js" )
-			script(	src="https://gist.github.com/1417083.js?file=maths-example.js" )
+	h2 Modules
+	article
+		script(	src="https://gist.github.com/1414127.js?file=module-example.js" )
+		script(	src="https://gist.github.com/1417083.js?file=maths-example.js" )
 
 section#tools-express.slide
-	blockquote
-		h2 Tools for Success
-		h3 Express yourself
-		div#tools-express-features.slide
-			ul.features
-				li Robust routing
-				li Redirection helpers
-				li Dynamic view helpers
-				li Content negotiation
-				li Focus on high performance
-				li View rendering and partials support
-			ul.features
-				li Environment based configuration
-				li Session based flash notifications
-				li Built on Connect
-				li High test coverage
-				li Executable for generating applications quickly
-				li Application level view options
+	h2 Tools for Success
+	h3 Express Yourself
+	div#tools-express-features.slide
+		h4 Features
+		ul.features
+			li Robust routing
+			li Redirection helpers
+			li Dynamic view helpers
+			li Content negotiation
+			li Focus on high performance
+			li View rendering and partials support
+		ul.features
+			li Environment based configuration
+			li Session based flash notifications
+			li Built on Connect
+			li High test coverage
+			li Executable for generating applications quickly
+			li Application level view options
 
 section#tools-express1.slide
-	blockquote
-		h2 Tools for Success
-		h3 Express Routes Example
-		script( src="https://gist.github.com/1414413.js?file=routes.js" )
+	h2 Tools for Success
+	h3 Express Routes Example
+	script( src="https://gist.github.com/1414413.js?file=routes.js" )
 
 section#tools-templates.slide
-	blockquote
-		h2 Tools for Success
-		h3 Template Engines
-		ul
-			li .ejs
-			li .jade
-			li .handlebars( moustache )
-			li ... the list goes on
+	h2 Tools for Success
+	h3 Template Engines
+	ul
+		li ejs
+		li jade
+		li handlebars
+		li {{ mustache }}
+		li ... the list goes on
 
 section#tools-templates-jade.slide
-	blockquote
-		h2 Tools for Success
-		h3 Template Engines
+	h2 Tools for Success
+	h3 Template Engines: I'm Jaded
 	ul.features( style="margin-right:5em" )
 		li client-side support
 		li great readability
@@ -105,46 +99,44 @@ section#tools-templates-jade.slide
 		li filters
 			ul
 				li=":stylus, :sass, :less, :markdown, :cdata, :coffeescript"
+
 section#tools-stylus.slide
-	blockquote
-		h2 Tools for Success
-		h3 Stylus
-		p.slide Expressive dynamic robust CSS
-		p.slide Flexible markup that is clean
-		p.slide NIB Framework
+	h2 Tools for Success
+	h3 Stylus
+	p.slide Expressive dynamic robust CSS
+	p.slide Flexible markup that is clean
+	p.slide NIB Framework
 
 section#tools-sockets.slide
-	blockquote
-		h2 Tools for Success
-		h3 Socket to me
-		p.slide Real-time, two-way connection to the server-side
-		p.slide	Enables single-page apps without dealing with $.ajax
-		p.slide	It's all about routes and callbacks	
+	h2 Tools for Success
+	h3 Socket to me
+	p.slide Real-time, two-way connection to the server-side
+	p.slide	Enables single-page apps without dealing with $.ajax
+	p.slide	It's all about routes and callbacks	
 
-section#why.slide	
-	blockquote
-		h2 Why should I use node when I've got &lt;language here&gt;
-		ul
-			li Node: I'm so excited I think I just wet myself a little.
-			li Heavy data processing
-			li Feed users processed data
+section#why.slide
+	h2 Why use Node when I've got &lt;language&gt;
+	p.slide	Node: I'm so excited I think I just wet myself a little.
+	p.slide	Heavy data processing
+	p.slide	Feed users processed data
 
 section#complete.slide
 	h2 Useful Links
-	article.serverside
+	article.features.serverside
 		h3 Server-side
 		ul
 			li: a( class="external", href="https://github.com/joyent/node/wiki/Community" ) Node Community
+			li: a( class="external", href="https://github.com/creationix/nvm" ) NVM
 			li: a( class="external", href="http://search.npmjs.org/" ) NPM (Node package manager)
 			li: a( class="external", href="http://expressjs.com/") Express
 			li: a( class="external", href="http://socket.io/" ) Socket.io
-	article.serverside
-		h3 Styling and presentation
+	article.features.serverside
+		h3 Client-side
 		ul
 			li: a( class="external", href="http://jade-lang.com/" ) Jade
 			li: a( class="external", href="http://learnboost.github.com/stylus/" ) Stylus
 			li: a( class="external", href="http://visionmedia.github.com/nib/" ) Nib
-	article.thanks
+	article.features.thanks
 		h3 Thanks
 		ul
 			li: a( class="extrnal", href="http://imakewebthings.github.com/deck.js", title="Modern HTML Presentations" ) Deck.js

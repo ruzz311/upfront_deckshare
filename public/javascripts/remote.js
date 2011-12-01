@@ -19,7 +19,7 @@ var Deck = {
 
 	videos : function( ) {
 		var flashvars = { };
-		var params = { };
+		var params = { wmode:"transparent" };
 		var attributes = { };
 		var howieLink = "http://www.youtube.com/v/g1ycCFVKSg4?enablejsapi=1&amp;version=3&amp;border=0&amp;autoplay=1&amp;start=20";
 		swfobject.embedSWF(howieLink, "howieVid", "100%", "100%", "9.0.0", "expressInstall.swf", flashvars, params, attributes);

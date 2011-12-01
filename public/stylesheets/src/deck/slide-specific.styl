@@ -2,6 +2,7 @@ txtShadow()
 	text-shadow: 2px 2px 5px rgba( 0,0,0, 0.3 )
 
 .deck-container
+	font-size: 2em
 	> .slide
 		background-color: transparent
 		background-image: none
@@ -12,8 +13,11 @@ txtShadow()
 		h1
 			margin: 25% 0 0 10%
 			line-height: 0.85em
+			font-size: 3em
 			text-align: right
 			txtShadow()
+		h2
+			font-size: 3em
 		& > .video
 			display: none
 		&.deck-current > .video
@@ -82,10 +86,10 @@ txtShadow()
 				color: #fff!important
 	
 	.features
-		float left
-		font-size .8em
-		&:first-child
-			margin-right:1em
+		float: left
+		font-size: .8em
+		display: block
+		width: 40%
 
 .deck .video
 	display: none
