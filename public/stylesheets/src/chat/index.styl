@@ -73,16 +73,7 @@
       font-weight bold
   p:nth-child(even)
     background #fafafa
-  #nicknames
-    background #ccc
-    padding 1% 1% 2%
-    font .5em Helvetica, Arial
-    position absolute
-    top 0
-    right 0
-    bottom 14%
-    left 70%
-    overflow-x auto
+  #nicknames, #lines
     &::-webkit-scrollbar
       width 6px
       height 6px
@@ -102,6 +93,17 @@
       width 50px
       background-color #8AC147 
       -webkit-border-radius 3px
+    
+  #nicknames
+    background #ccc
+    padding 1% 1% 2%
+    font .5em Helvetica, Arial
+    position absolute
+    top 0
+    right 0
+    bottom 14%
+    left 70%
+    overflow-x auto
     span
       color black
       display block
@@ -128,25 +130,6 @@
     overflow auto
     overflow-x hidden
     overflow-y auto
-    &::-webkit-scrollbar
-      width 6px
-      height 6px
-    &::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment
-      display block
-      height 10px
-    &::-webkit-scrollbar-button:vertical:increment
-      background-color #8AC147 
-    &::-webkit-scrollbar-track-piece
-      background-color #8AC147 
-      -webkit-border-radius 3px
-    &::-webkit-scrollbar-thumb:vertical
-      height 50px
-      background-color rgba( 81,76,60, 1 )
-      -webkit-border-radius 3px
-    &::-webkit-scrollbar-thumb:horizontal
-      width 50px
-      background-color #8AC147 
-      -webkit-border-radius 3px
 
 #send-message
   background #fff

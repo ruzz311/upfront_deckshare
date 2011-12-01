@@ -15,7 +15,7 @@ section#helloNode-evented.slide
 	h3 Evented Server
 	ul
 		li.slide Current version: 0.6.3 (stable)
-		li.slide V8 implementation - fast!
+		li.slide V8 implementation
 		li.slide Node is nearly non-blocking through callbacks
 
 section#helloNode-evented-example.slide
@@ -62,7 +62,7 @@ section#tools-express.slide
 			li Executable for generating applications quickly
 			li Application level view options
 
-section#tools-express1.slide
+section#tools-express-routes.slide
 	h2 Tools for Success
 	h3 Express Routes Example
 	script( src="https://gist.github.com/1414413.js?file=routes.js" )
@@ -117,6 +117,22 @@ section#tools-sockets.slide
 	p.slide	Enables single-page apps without dealing with $.ajax
 	p.slide	It's all about routes and callbacks	
 
+section#tools-services.slide
+	h2 Tools for Success
+	h3 Beyond the front-end
+	articles.features.slide
+		h4 Servers
+		ul.features.slide
+			li Nodester (free!)
+			li Heroku (free!)
+			li Joyent (free!)
+			li Nodejitsu (not open yet)
+	articles#.features.slide
+		h4 Database
+		ul.features.slide
+			li iriscouch.com (Free CouchDB)
+			li cloudant.com (Free CouchDB)
+
 section#why.slide
 	h2 Why use Node when I've got &lt;language&gt;
 	p.slide	Node: I'm so excited I think I just wet myself a little.
@@ -129,8 +145,8 @@ section#complete.slide
 		h3 Server-side
 		ul
 			li: a( class="external", href="https://github.com/joyent/node/wiki/Community" ) Node Community
-			li: a( class="external", href="https://github.com/creationix/nvm" ) NVM
-			li: a( class="external", href="http://search.npmjs.org/" ) NPM (Node package manager)
+			li: a( class="external", href="https://github.com/creationix/nvm" ) NVM (Node Version Manager)
+			li: a( class="external", href="http://search.npmjs.org/" ) NPM (Node Package Manager)
 			li: a( class="external", href="http://expressjs.com/") Express
 			li: a( class="external", href="http://socket.io/" ) Socket.io
 	article.features.serverside
@@ -139,11 +155,27 @@ section#complete.slide
 			li: a( class="external", href="http://jade-lang.com/" ) Jade
 			li: a( class="external", href="http://learnboost.github.com/stylus/" ) Stylus
 			li: a( class="external", href="http://visionmedia.github.com/nib/" ) Nib
+	article.features.serverside
+		h3 Services
+		ul
+			li: a( class="external", href="http://nodester.com/" ) nodester.com (Free node host)
+			li: a( class="external", href="http://www.heroku.com/" ) heroku.com (Free node host)
+			li: a( class="external", href="http://nodejitsu.com/" ) nodejitsu.com (Not free)
+			li: a( class="external", href="http://www.iriscouch.com/" ) iriscouch.com (Free CouchDB)
+			li: a( class="external", href="https://cloudant.com" ) cloudant.com (Free CouchDB)
 	article.features.thanks
 		h3 Thanks
 		ul
 			li: a( class="extrnal", href="http://imakewebthings.github.com/deck.js", title="Modern HTML Presentations" ) Deck.js
 			li: a( class="external", href="http://www.meetup.com/upfront/" ) UpFront
+			li: a( class="external", href="http://www.dhs.com/" ) Riverpoint
+			li: a( class="external", href="http://www.vml.com" ) VML
+	br( clear="all" )
+	article.features.in-the-wild
+		h3 Node in the Real World
+		ul
+			li: a( class="extrnal", href="http://venturebeat.com/2011/08/16/linkedin-node/" ) How LinkedIn used Node.js and HTML5 to build a better, faster app
+			li: a( class="external", href="http://backstage.soundcloud.com/2010/08/node-js-knockout-august-28th-29th/" ) Soundcloud participates in Node-knockout
 			li: a( class="external", href="http://www.dhs.com/" ) Riverpoint
 			li: a( class="external", href="http://www.vml.com" ) VML
 	
