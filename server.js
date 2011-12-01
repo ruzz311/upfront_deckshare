@@ -42,12 +42,13 @@ app.configure(function(){
   app.use( express.methodOverride() );
   app.use( express.cookieParser() );
   app.use( express.session({ secret: 'your secret here' }) );
+  /* Remove stylus in production */
   app.use( stylus.middleware({ 
       src: appdir['public'],
       compile: compile 
     })); 
   app.use( app.router );
-  app.use( express['static'](appdir['public']) );
+  app.use( express['static']( appdir['public'] ) );
 });
 
 app.configure( 'development', function( ) {

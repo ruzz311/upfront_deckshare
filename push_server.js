@@ -1,7 +1,12 @@
 /**
  * Socket.IO server (single process only)
  */
-sio = require( 'socket.io' );
+var sio = require( 'socket.io' );
+var history = [];
+
+function trackActivity( obj ){
+  history.push( obj );
+}
 
 module.exports = function( app ) {
 
@@ -12,6 +17,12 @@ module.exports = function( app ) {
 
     socket.on('chat/user message', function( msg ) {
       socket.broadcast.emit( 'chat/user message', socket.nickname, msg );
+      trackActivity({
+          "action" : "chat/message",
+          "nick" : socket.nickname,
+          "msg" : msg,
+          "timestamp" : new Date()
+        });
     });
 
     socket.on('chat/nickname', function( nick, fn ) {
@@ -25,6 +36,11 @@ module.exports = function( app ) {
         nicknames[ nick ] = socket.nickname = nick;
         socket.broadcast.emit( 'chat/announcement', nick + ' connected');
         io.sockets.emit( 'chat/nicknames', nicknames );
+        trackActivity({
+          "action":"chat/nick",
+          "nick":nick,
+          "timestamp": new Date()
+        });
       }
     });
 
@@ -33,6 +49,15 @@ module.exports = function( app ) {
       var msg = '<a href="#" class="goto" rel="'+slide.to+'">Viewing slide '+slide.to+'</a>';
       socket.broadcast.emit( 'chat/announcement', msg );
       socket.broadcast.emit( 'deck/slide change', slide.to );
+      trackActivity({
+          "action":"deck/change",
+          "slide": 
+            {
+              "raw" : slide.to,
+              "formatted" : msg
+            },
+          "timestamp": new Date()
+        });
     });
     
     socket.on('disconnect', function () {
@@ -41,8 +66,18 @@ module.exports = function( app ) {
       delete nicknames[socket.nickname];
       socket.broadcast.emit('announcement', socket.nickname + ' disconnected');
       socket.broadcast.emit('nicknames', nicknames);
+      trackActivity({
+          "action":"disconnect",
+          "nick":socket.nickname,
+          "timestamp": new Date()
+        });
     });
-    
+
+    // history
+    socket.on( 'chat/history', function( fn ) {
+      fn( history );
+    });
+
   });
   return io;
 };

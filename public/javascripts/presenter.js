@@ -25,6 +25,14 @@ var Deck = {
 
 };
 
+var chat_log = [];
+function getChatLog( ) {
+	Chat.socket.emit( 'chat/history', function( chatHist ) {
+		chat_log = chatHist;
+		console.log( JSON.stringify( chat_log ) );
+	});
+}
+
 $( function( ) {
 
 	Deck.init();

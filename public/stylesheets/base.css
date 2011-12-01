@@ -13,24 +13,18 @@
 #messages p{padding:0;margin:0;font:12px Helvetica,Arial;padding:5px 10px;}
 #messages p b{display:inline-block;padding-right:10px;font-weight:bold}
 #messages p:nth-child(even){background:#fafafa}
+#messages #nicknames::-webkit-scrollbar,#messages #lines::-webkit-scrollbar{width:6px;height:6px}
+#messages #nicknames::-webkit-scrollbar-button:start:decrement,#messages #lines::-webkit-scrollbar-button:start:decrement,#messages #nicknames ::-webkit-scrollbar-button:end:increment,#messages #lines ::-webkit-scrollbar-button:end:increment{display:block;height:10px}
+#messages #nicknames::-webkit-scrollbar-button:vertical:increment,#messages #lines::-webkit-scrollbar-button:vertical:increment{background-color:#8ac147}
+#messages #nicknames::-webkit-scrollbar-track-piece,#messages #lines::-webkit-scrollbar-track-piece{background-color:#8ac147;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-thumb:vertical,#messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#514c3c;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-thumb:horizontal,#messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#8ac147;-webkit-border-radius:3px}
 #messages #nicknames{background:#ccc;padding:1% 1% 2%;font:.5em Helvetica,Arial;position:absolute;top:0;right:0;bottom:14%;left:70%;overflow-x:auto;}
-#messages #nicknames::-webkit-scrollbar{width:6px;height:6px}
-#messages #nicknames::-webkit-scrollbar-button:start:decrement,#messages #nicknames ::-webkit-scrollbar-button:end:increment{display:none;height:10px}
-#messages #nicknames::-webkit-scrollbar-button:vertical:increment{background-color:#8ac147}
-#messages #nicknames::-webkit-scrollbar-track-piece{background-color:#8ac147;-webkit-border-radius:3px}
-#messages #nicknames::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#514c3c;-webkit-border-radius:3px}
-#messages #nicknames::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#8ac147;-webkit-border-radius:3px}
 #messages #nicknames span{color:#000;display:block;width:100%}
 #messages #nicknames b{display:block;color:#333;padding:3px 6px;text-shadow:0 1px 0 #666;width:auto;}
 #messages #nicknames b.me{cursor:pointer;color:#fff;background:#999;margin-right:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;text-shadow:0 1px 0 #666;}
 #messages #nicknames b.me:focus{outline:0}
-#messages #lines{height:100%;width:70%;color:#000;overflow:auto;overflow-x:hidden;overflow-y:auto;}
-#messages #lines::-webkit-scrollbar{width:6px;height:6px}
-#messages #lines::-webkit-scrollbar-button:start:decrement,#messages #lines ::-webkit-scrollbar-button:end:increment{display:block;height:10px}
-#messages #lines::-webkit-scrollbar-button:vertical:increment{background-color:#8ac147}
-#messages #lines::-webkit-scrollbar-track-piece{background-color:#8ac147;-webkit-border-radius:3px}
-#messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#514c3c;-webkit-border-radius:3px}
-#messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#8ac147;-webkit-border-radius:3px}
+#messages #lines{height:100%;width:70%;color:#000;overflow:auto;overflow-x:hidden;overflow-y:auto}
 #send-message{background:#fff;position:relative;}
 #send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:72%;}
 #send-message input:focus{outline:0}
@@ -261,7 +255,7 @@ body.deck-container .deck-status{position:fixed}
 .deck-container .goto-form input{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px}
 .deck-container{font-size:2em;}
 .deck-container > .slide{background-color:transparent;background-image:none;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;}
-.deck-container > .slide h1{margin:25% 0 0 10%;line-height:.85em;font-size:3em;text-align:right;text-shadow:2px 2px 5px rgba(0,0,0,0.30)}
+.deck-container > .slide h1{margin:25% 0 0 10%;line-height:.85em;font-size:3em;text-align:right;text-shadow:2px 2px 5px rgba(0,0,0,0.50)}
 .deck-container > .slide h2{font-size:2.5em}
 .deck-container > .slide > .video{display:none}
 .deck-container > .slide.deck-current > .video{display:block}
@@ -271,11 +265,13 @@ body.deck-container .deck-status{position:fixed}
 .deck-container > .slide.logo2{background-image:url("/images/nodejs-green-logo.png");background-color:#80be58;background-position:80% center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
 .deck-container > .slide.logo2 h1{margin-top:0;margin-left:1em;margin-right:40%;text-align:left}
 .deck-container > .slide#preface h1{margin-top:20%;left:auto;text-align:left}
-.deck-container > .slide#preface a{text-shadow:2px 2px 5px rgba(0,0,0,0.30);font-size:2em;margin-top:25%;margin-left:10%;margin-right:5%;text-align:left;left:auto;position:absolute;right:0;top:50%}
+.deck-container > .slide#preface a{text-shadow:2px 2px 5px rgba(0,0,0,0.50);font-size:2em;margin-top:25%;margin-left:10%;margin-right:5%;text-align:left;left:auto;position:absolute;right:0;top:50%}
 .deck-container > .slide#complete{background-color:#80be58;background-image:url("/images/nodejs-green-logo.png");background-position:bottom center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
 .deck-container > .slide#complete h2{color:#fff;border-bottom-color:#3f413b;text-shadow:3px 3px 3px rgba(0,0,0,0.30)}
 .deck-container > .slide#complete a{color:#fff;font-weight:700}
-.deck-container > .slide#complete .features{width:30%}
+.deck-container > .slide#complete li{font-size:.65em}
+.deck-container > .slide#complete .features{width:30%;}
+.deck-container > .slide#complete .features.client-side{clear:both}
 .deck-container > .slide#tools h1{line-height:1em;font-size:3em;margin-left:57%;text-transform:uppercase;text-align:left}
 .deck-container > .slide.on-slide-complete ::-moz-selection{background:#3f4138 !important;color:#fff !important}
 .deck-container > .slide.on-slide-complete ::selection{background:#3f4138 !important;color:#fff !important}
