@@ -1,11 +1,12 @@
 {
-    "name": "upfront_deskshare"
-  , "version": "0.0.1"
-  , "private": false
+    "name"		: "upfront_deskshare"
+  , "version"	: "0.0.1"
+  , "private"	: false
   , "dependencies": {
-      "express": "2.4.6"
-    , "stylus": ">= 0.0.1"
-    , "jade": ">= 0.0.1"
-    , "socket.io": ">= 0.8.7"
+      "express"		: "2.4.6"
+    , "stylus"		: ">= 0.0.1"
+    , "jade"		: ">= 0.0.1"
+    , "socket.io"	: ">= 0.8.7"
+    , "nib"			: ">= 0.0.1"
   }
 }

@@ -1,36 +1,35 @@
 // Pathing
-require.paths.unshift('./node_modules');
-
-var appdir = { "root"   : __dirname };
-    appdir[ 'public' ]  = appdir.root + "/public";
-    appdir.views        = appdir.root + "/views";
+require.paths.unshift( './node_modules' );
 
 // Module dependencies.
-var express = require('express'),
+var express = require( 'express' ),
     stylus = require( 'stylus' ),
     crypto = require( 'crypto' ),
-    nib = require( 'nib' )();
-
+    nib = require( 'nib' )();    
 var app = module.exports = express.createServer(),
     basicAuth = express.basicAuth;
 
+var appdir = { 
+    root    : __dirname,
+    views   : __dirname + '/views',
+    "public": __dirname + '/public'
+  };
 var Security = {
-  auth_title: "Ah, ah ah... you didn't say the magic word...",
   simple_auth : express.basicAuth( function( user, pass ) { 
-      return ( user=='pass' && pass=="pass" ) ? true : false;
-    }, 'Restricted to current presenter' )
+      return ( user=='user' && pass=="pass" ) ? true : false;
+    }, "Restricted to current presenter" )
 };
 
 var compile = function( str, path ) {
   return stylus( str )
     .set( 'filename', path )
     .set( 'warn', false )
-    .set( 'compress', false )
+    .set( 'compress', app.settings.env == "development" )
     .set( 'firebug', false )
     .set( 'lineos', true )
     .use( nib )
-    ['import']( 'nib' )
-    ['import']( appdir['public']+'/stylesheets/src/common.styl' );
+    .import( 'nib' )
+    .import( appdir['public']+'/stylesheets/src/common.styl' );
 };
 
 
@@ -58,21 +57,14 @@ app.configure( 'development', function( ) {
 
 app.configure( 'production', function( ) {
   app.set( 'view options', { pretty: false });
-  //app.use( express.errorHandler() ); 
-  app.use( express.errorHandler({ dumpExceptions: true, showStack: true }) ); 
+  app.use( express.errorHandler() ); 
 });
 
 // Helpers
-
   // dynamic view helpers  
   app.dynamicHelpers({
-
-    request: function( req ) {
-      return req;
-    }
-
+    request: function( req ) { return req; }
   });
-
 
 // Routes
   // General routes
@@ -97,7 +89,8 @@ app.configure( 'production', function( ) {
   // Presenter / projector view
   app.get( '/presenter', function( req, res ) {
     res.render( 'presentation/node', {
-      title: 'Node - PEEEYYYAAAAAHHH'
+      title: 'Node - PEEEYYYAAAAAHHH',
+      layout: 'layouts/presenter'
     });
   });
 

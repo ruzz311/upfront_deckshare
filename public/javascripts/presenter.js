@@ -2,22 +2,23 @@ var Deck = {
 
 	init : function( ) {
 		$.deck( '.slide' );
-		$.deck( 'showMenu' );
 
 		// Current slide reporting
 		$( document ).bind('deck.change', function( event, from, to ) {
-			Chat.socket.emit( 'deck/change', { "from":from, "to":to  } );
-			Chat.announcement( msg );
+			Chat.socket.emit( 'deck/change', { "from":from, "to":to  } );		
 		});
 	},
 
 	change : function( msg ) {
-		$.deck( 'go', slide );
+		Chat.announce( msg );
 	}
+
 };
 
 $( function( ) {
 
 	Deck.init();
-
+	
 });
+
+

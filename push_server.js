@@ -25,17 +25,11 @@ module.exports = function( app ) {
       }
     });
 
-    socket.on( 'chat/disconnect', function( ) {
-      if ( !socket.nickname ) return;
-      delete nicknames[ socket.nickname ];
-
-      socket.broadcast.emit( 'chat/announcement', socket.nickname + ' disconnected' );
-      socket.broadcast.emit( 'chat/nicknames', nicknames );
-    });
-
-    socket.on( 'deck/change', function( slideinfo ) {
-      socket.broadcast.emit( 'chat/announcement', slideinfo.msg );
-      socket.broadcast.emit( 'deck/slide change', slideinfo.to );
+    // Slide change from presenter or remote
+    socket.on( 'deck/change', function( slide ) {
+      var msg = '<a href="#" class="goto" rel="'+slide.to+'">Viewing slide '+slide.to+'</a>';
+      socket.broadcast.emit( 'chat/announcement', msg );
+      socket.broadcast.emit( 'deck/slide change', slide.to );
     });
     
   });
