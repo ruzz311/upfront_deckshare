@@ -2,49 +2,48 @@ section#preface.slide.intro
 	h1 Peeeeyaahhhhhhhhh!
 	a( href="http://upfront_deckshare.nodester.com" ) upfront_deckshare.nodester.com
 
-section#welcome.slide.intro
-	h1 A JavaScript backend
-
 section#howie-d.slide.media
 	div.video
-		//- iframe( width="100%", height="100%", src="http://www.youtube.com/embed/g1ycCFVKSg4?autoplay=1#t=20s", frameborder="0", allowfullscreen )
+		iframe( width="100%", height="100%", src="http://www.youtube.com/embed/g1ycCFVKSg4?autoplay=1#t=20s", frameborder="0", allowfullscreen )
 
 section#overview.slide.logo2
-	h2 I'll give you a topic... discuss:
-	ul
-		li#overview-basics.slide
-			h3 Hello, my name is node.
-			ul
-				li History
-					ul
-						li 2009
-						li jsconf
-				li Installing( Node, npm, nvm )
-					ul: li package files and how they make dependancy easy
-				li simple server example... now what?
-				li Modules aka: roll your own plugin
+	h1 Hello, my name is...
 
-		li#overview-tools.slide
+section#overview-basics.slide	
+	h3 Hello, my name is node.
+	li History
+		ul
+			li 2009
+			li jsconf
+			li V8 implementation
+	li Evented Server?
+		ul
+			li Node is nearly non-blocking
+			li Achieved through callbacks
+	li Installing( Node, npm, nvm )
+		ul
+			li nvm
+			li package files and how they make dependancy easy
+	li simple server example... now what?
+	li Modules aka: roll your own plugin
+
+section#overview-tools.slide	
+	
 			h3 Tools for success
+			h4 Express yourself
 			ul
-				li Express - p()wns your ass (back-end server)
-				
-				li Connect
+				li Built on Connect
 				li
 					a( href="https://github.com/joyent/node/wiki/modules#wiki-templating", target="_blank" ) Template Engines
 					|  : Pick one that you can use both sides ( Moustache or Handlebars or the supported express engines: Jade, ejs )
-		
-		li#overview-thought.slide
-			h3 When to use / though process
-			ul
-				li Node & You: match made in heaven, or nighmare from... ?
+
+section#why.slide	
+
+	h3 When to use / though process
+	ul
+		li Node & You: match made in heaven, or nighmare from... ?
 		li.slide
 			h3 This is the second list item.
-			ul
-				li
-
-section#tools.slide.logo1
-	h1 Hello, my name is node.
 
 section#tools.slide.logo1
 	h1 Tools for success
@@ -116,21 +115,10 @@ section.slide
 			-shit
 			-yo momma
 
-section.slide
-	h2 Have you ever seen a fucking list of items like this?
-	ul
-		li.slide I aint
-		li.slide got no
-		li.slide panties on
-		li.slide on the dance flo
-	blockquote.slide
-		p DAGGERING!
-		//- <object width="800" height="450" style="margin:0 auto"><param name="allowfullscreen" value="true" /><param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=5936810&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=ff9933&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" /><embed src="http://vimeo.com/moogaloop.swf?clip_id=5936810&amp;server=vimeo.com&amp;show_title=1&amp;show_byline=0&amp;show_portrait=0&amp;color=ff9933&amp;fullscreen=1&amp;autoplay=0&amp;loop=0" type="application/x-shockwave-flash" allowfullscreen="true" allowscriptaccess="always" width="800" height="450"></embed></object>
-
 section#complete.slide
 	h2 Credits / Useful Links
 	article.serverside
-		h3 Serverside
+		h3 Server-side
 		ul
 			li: a( class="external", href="https://github.com/joyent/node/wiki/Community" ) Node Community
 			li: a( class="external", href="http://expressjs.com/") Express
@@ -146,7 +134,9 @@ section#complete.slide
 		h3 Thanks
 		ul
 			li: a( class="extrnal", href="http://imakewebthings.github.com/deck.js", title="Modern HTML Presentations" ) Deck.js
-			li: a( class="external", href="http://code.google.com/p/google-code-prettify/", title="Syntax highlighting of code snippets in a web page." ) google-code-prettify
+			li: a( class="external", href="#" ) UpFront
+			li: a( class="external", href="#" ) Riverpoint
+			li: a( class="external", href="#" ) VML
 	
 
 

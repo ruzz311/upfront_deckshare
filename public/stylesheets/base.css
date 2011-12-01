@@ -256,9 +256,10 @@ body.deck-container .deck-status{position:fixed}
 .deck-container > .slide{background-color:transparent;background-image:none;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;}
 .deck-container > .slide h1{margin:25% 0 0 10%;line-height:.85em;text-align:right;text-shadow:2px 2px 5px rgba(0,0,0,0.30)}
 .deck-container > .slide.intro{background-image:url("/images/nodejs-1280x1024.png")}
-.deck-container > .slide.logo1{background-image:url("/images/nodejs-green-logo.png");background-color:#80be58;background-position:30% center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
-.deck-container > .slide.logo1 h1{margin-top:0%;margin-left:45%}
-.deck-container > .slide.logo2 h1{margin-top:0%;margin-left:10%}
+.deck-container > .slide.logo1{background-image:url("/images/nodejs-green-logo.png");background-color:#80be58;background-position:20% center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
+.deck-container > .slide.logo1 h1{margin-top:0;margin-left:30%}
+.deck-container > .slide.logo2{background-image:url("/images/nodejs-green-logo.png");background-color:#80be58;background-position:80% center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
+.deck-container > .slide.logo2 h1{margin-top:0;margin-left:1em;margin-right:40%;text-align:left}
 .deck-container > .slide#preface h1{margin-top:20%;left:auto;text-align:left}
 .deck-container > .slide#preface a{text-shadow:2px 2px 5px rgba(0,0,0,0.30);font-size:2em;margin-top:25%;margin-left:10%;margin-right:5%;text-align:left;left:auto;position:absolute;right:0;top:50%}
 .deck-container > .slide#complete{background-color:#80be58;background-image:url("/images/nodejs-green-logo.png");background-position:bottom center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
