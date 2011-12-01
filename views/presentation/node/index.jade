@@ -6,54 +6,47 @@ section#howie-d.slide.media
 	div.video
 		iframe( width="100%", height="100%", src="http://www.youtube.com/embed/g1ycCFVKSg4?autoplay=1#t=20s", frameborder="0", allowfullscreen )
 
-section#overview.slide.logo2
-	h1 Hello, my name is...
+section#helloNode.slide.logo2
+	h1 Hello, <br/> my name is...
 
-section#overview-basics.slide	
-	h3 Hello, my name is node.
-	li History
+section#helloNode-evented.slide
+	blockquote	
+		h2 Hello, my name is...
+		h3 Evented Server
 		ul
-			li 2009
-			li jsconf
-			li V8 implementation
-	li Evented Server?
+			li.slide Current version: 0.6.3 (stable)
+			li.slide V8 implementation - fast!
+			li.slide Node is nearly non-blocking through callbacks
+
+section#helloNode-evented-example.slide
+	blockquote
+		h2 Callbacks
+		article.slide
+			script( src="https://gist.github.com/1413886.js?file=jquery-callback" )
+
+		article.slide
+			script( src="https://gist.github.com/1414059.js?file=file-list" )
+			
+section#helloNode-install.slide	
+	blockquote
+		h2 Hello, I make it easy to...
 		ul
-			li Node is nearly non-blocking
-			li Achieved through callbacks
-	li Installing( Node, npm, nvm )
-		ul
-			li nvm
-			li package files and how they make dependancy easy
-	li simple server example... now what?
-	li Modules aka: roll your own plugin
+			li nvm now, thank yourself later ( ruby guys know whats up )
+			li package files and how they make dependency easy
+			li simple server example now what?
+			ul.slide: li Modules
 
-section#overview-tools.slide	
-	
-			h3 Tools for success
-			h4 Express yourself
-			ul
-				li Built on Connect
-				li
-					a( href="https://github.com/joyent/node/wiki/modules#wiki-templating", target="_blank" ) Template Engines
-					|  : Pick one that you can use both sides ( Moustache or Handlebars or the supported express engines: Jade, ejs )
-
-section#why.slide	
-
-	h3 When to use / though process
-	ul
-		li Node & You: match made in heaven, or nighmare from... ?
-		li.slide
-			h3 This is the second list item.
-
-section#tools.slide.logo1
-	h1 Tools for success
+section#helloNode-module.slide
+	blockquote
+		h2 Modules
+		article.slide
+			script(	src="https://gist.github.com/1414127.js?file=module-example" )
 
 section#tools-express.slide
-	h2 Tools for success
-	h3 Express - p()wns your ass (back-end server)
-	ul
-		li#tools-express-features.slide
-			h3 Features
+	blockquote
+		h2 Tools for success
+		h3 Express yourself
+		div#tools-express-features.slide
 			ul.features
 				li Robust routing
 				li Redirection helpers
@@ -68,36 +61,25 @@ section#tools-express.slide
 				li High test coverage
 				li Executable for generating applications quickly
 				li Application level view options
-			ul.features
-				li: b Via Connect:
-				li Session support
-				li Cache API
-				li Mime helpers
-				li ETag support
-				li Persistent flash notifications
-				li Cookie support
-				li JSON-RPC
-				li Logging
 
-section#tools-connect.slide
-	h2 Tools for success
-	h3 Templates
+section#tools-express1.slide
+	blockquote
+		h2 Express Routes example
+		script( src="https://gist.github.com/1414413.js?file=routes" )
+
+section#tools-sockets.slide
+	blockquote
+		h2 Tools for success
+		h3 Socket to me
+		p.slide Real-time, two-way connection to the server-side
+			
+
+section#why.slide	
+	h2 Why should I use node when I've got <language here>
 	ul
-		li.slide
-			a( href="https://github.com/joyent/node/wiki/modules#wiki-templating", target="_blank" ) Template Engines
-			|  : Pick one that you can use both sides ( Moustache or Handlebars or the supported express engines: Jade, ejs )
-
-
-section.slide
-	h2 This is a header.
-	p this is a paragraph
-	ul
-		li This is the first list item.
-		li This is the second list item.
-
-	article.code
-		p Here's some example code:
-		script( src="https://gist.github.com/1398894.js?file=nodejs-hello-world.js" )
+		li Node: I'm so excited I think I just wet myself alittle.
+		li Heavy data processing
+		li Feed users processed data
 
 section.slide
 	:markdown
@@ -107,36 +89,28 @@ section.slide
 		>
 		> Back to the first level.
 
-section.slide
-	h1 tehings 3
-	:markdown
-		shit said the **brown** cow
-		I just dont understand:
-			-shit
-			-yo momma
-
 section#complete.slide
-	h2 Credits / Useful Links
+	h2 Useful Links
 	article.serverside
 		h3 Server-side
 		ul
 			li: a( class="external", href="https://github.com/joyent/node/wiki/Community" ) Node Community
+			li: a( class="external", href="http://search.npmjs.org/" ) NPM (Node package manager)
 			li: a( class="external", href="http://expressjs.com/") Express
-			li: a( class="external", href="http://senchalabs.github.com/connect/" ) Connect( express dependancy )
 			li: a( class="external", href="http://socket.io/" ) Socket.io
 	article.serverside
 		h3 Styling and presentation
 		ul
-			li: a( class="external", href="#" ) Jade
-			li: a( class="external", href="#" ) Stylus
-			li: a( class="external", href="#" ) Nib
+			li: a( class="external", href="http://jade-lang.com/" ) Jade
+			li: a( class="external", href="http://learnboost.github.com/stylus/" ) Stylus
+			li: a( class="external", href="http://visionmedia.github.com/nib/" ) Nib
 	article.thanks
 		h3 Thanks
 		ul
 			li: a( class="extrnal", href="http://imakewebthings.github.com/deck.js", title="Modern HTML Presentations" ) Deck.js
-			li: a( class="external", href="#" ) UpFront
-			li: a( class="external", href="#" ) Riverpoint
-			li: a( class="external", href="#" ) VML
+			li: a( class="external", href="http://www.meetup.com/upfront/" ) UpFront
+			li: a( class="external", href="http://www.dhs.com/" ) Riverpoint
+			li: a( class="external", href="http://www.vml.com" ) VML
 	
 
 

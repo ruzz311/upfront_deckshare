@@ -26,9 +26,9 @@
 #messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#ccc;-webkit-border-radius:3px}
 #messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#fff;-webkit-border-radius:3px}
 #send-message{background:#fff;position:relative;}
-#send-message input{border:none;height:30px;padding:0 1%;line-height:30px;vertical-align:middle;width:98%;}
+#send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:12em;}
 #send-message input:focus{outline:0}
-#send-message button{position:absolute;top:0;}
+#send-message button{position:absolute;top:0;height:1em;}
 #send-message button.send{right:5em}
 #send-message button.cancel{right:0}
 button{margin:0;-webkit-user-select:none;-moz-user-select:none;user-select:none;display:inline-block;text-decoration:none;background:#43a1f7;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #43a1f7), color-stop(1, #377ad0));background:-webkit-linear-gradient(top, #43a1f7 0%, #377ad0 100%);background:-moz-linear-gradient(top, #43a1f7 0%, #377ad0 100%);background:linear-gradient(top, #43a1f7 0%, #377ad0 100%);border:1px solid #2e70c4;-webkit-border-radius:16px;-moz-border-radius:16px;border-radius:16px;color:#fff;font-family:"lucida grande",sans-serif;font-size:11px;font-weight:normal;line-height:1;padding:3px 10px 5px 10px;text-align:center;text-shadow:0 -1px 1px #2d6dc0;}
@@ -52,7 +52,7 @@ button:focus,button.focus{outline:none;-webkit-box-shadow:0 1px 0 0 rgba(255,255
 .deck-container .gist .gist-file .gist-data .gist-highlight pre{counter-reset:linenumbers;}
 .deck-container .gist .gist-file .gist-data .gist-highlight pre div{padding:0 1.5em;}
 .deck-container .gist .gist-file .gist-data .gist-highlight pre div:nth-child(odd){background-color:rgba(255,255,255,0.03)}
-.deck-container .gist .gist-file .gist-data .gist-highlight pre div:before{background:rgba(255,255,255,0.03);border-right:1px solid rgba(138,193,71,0.25);color:rgba(138,193,71,0.50);content:counter(linenumbers);counter-increment:linenumbers;left:2.5em;padding:0 .25em 0 .25em;position:absolute;text-align:right;width:auto}
+.deck-container .gist .gist-file .gist-data .gist-highlight pre div:before{background:rgba(255,255,255,0.03);border-right:1px solid rgba(138,193,71,0.25);color:rgba(138,193,71,0.50);content:counter(linenumbers);counter-increment:linenumbers;padding:0 .25em 0 .25em;position:absolute;left:0;text-align:right;width:auto}
 .deck-container .gist .gist-file .gist-data .gist-line-numbers{background-color:#ececec;color:#aaa;border-right:1px solid #ddd;text-align:right;}
 .deck-container .gist .gist-file .gist-data .gist-line-numbers span{clear:right;display:block}
 .deck-container .gist .gist-file .gist-syntax{background:#353129;}
@@ -237,7 +237,7 @@ body.deck-container .deck-status{position:fixed}
 .deck-container .slide h3{color:#fff}
 .deck-container .slide pre{background:rgba(255,255,255,0.90);border:.5em solid #353129}
 .deck-container .slide code{color:#888}
-.deck-container .slide blockquote{font-size:2em;font-style:italic;padding:1em 2em;color:#000;border-left:5px solid #96967d;}
+.deck-container .slide blockquote{font-size:2em;}
 .deck-container .slide blockquote p{margin:0}
 .deck-container .slide blockquote cite{font-size:.5em;font-style:normal;font-weight:bold;color:#888}
 .deck-container .slide ::-moz-selection{background:#8ac147;color:#fff}
@@ -268,7 +268,8 @@ body.deck-container .deck-status{position:fixed}
 .deck-container > .slide#tools h1{line-height:1em;font-size:3em;margin-left:57%;text-transform:uppercase;text-align:left}
 .deck-container > .slide.on-slide-complete ::-moz-selection{background:#3f4138 !important;color:#fff !important}
 .deck-container > .slide.on-slide-complete ::selection{background:#3f4138 !important;color:#fff !important}
-.deck-container #tools-express-features .features{float:left}
+.deck-container .features{float:left;font-size:.8em;}
+.deck-container .features:first-child{margin-right:1em}
 .csstransitions.csstransforms .deck-container .slide{-webkit-transition-property:transform,-webkit-transform;-moz-transition-property:transform,-webkit-transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.8s,.4s,.4s;-moz-transition-duration:.8s,.4s,.4s;transition-duration:.8s,.4s,.4s;-webkit-transition-timing-function:linear;-moz-transition-timing-function:linear;transition-timing-function:linear}
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide{position:absolute;top:0;left:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;padding:0 48px;}
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide{position:relative;left:0;top:0;opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);-webkit-transform:scale(.5,.5,.5);-moz-transform:scale(.5,.5,.5);transform:scale(.5,.5,.5)}

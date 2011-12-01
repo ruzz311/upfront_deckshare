@@ -1,6 +1,7 @@
 var Deck = {
 
 	init : function( ) {
+		
 		$.deck( '.slide' );
 		$.deck( 'showMenu' );
 
