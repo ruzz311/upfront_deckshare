@@ -1,5 +1,5 @@
 #chat,#nickname,#messages{z-index:9000;display:block}
-#chat{display:none;opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);position:absolute;border:1px solid #ccc;bottom:1%;left:auto;right:1%;width:500px;-webkit-transition-property:transform,-webkit-transform;-moz-transition-property:transform,-webkit-transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.8s,.4s,.4s;-moz-transition-duration:.8s,.4s,.4s;transition-duration:.8s,.4s,.4s;-webkit-transition-timing-function:linear;-moz-transition-timing-function:linear;transition-timing-function:linear;}
+#chat{display:none;opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);position:absolute;border:1px solid #ccc;bottom:1%;left:auto;right:1%;width:30em;-webkit-transition-property:transform,-webkit-transform;-moz-transition-property:transform,-webkit-transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.8s,.4s,.4s;-moz-transition-duration:.8s,.4s,.4s;transition-duration:.8s,.4s,.4s;-webkit-transition-timing-function:linear;-moz-transition-timing-function:linear;transition-timing-function:linear;}
 #chat.visible{display:block;opacity:1;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100);}
 #nickname,#connecting{position:absolute;height:100%;z-index:100;left:0;top:0;background:#fff;text-align:center;width:100%;font:15px Georgia;color:#666;display:block;}
 #nickname .wrap,#connecting .wrap{padding-top:150px}
@@ -26,9 +26,9 @@
 #messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#ccc;-webkit-border-radius:3px}
 #messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#fff;-webkit-border-radius:3px}
 #send-message{background:#fff;position:relative;}
-#send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:12em;}
+#send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:16em;}
 #send-message input:focus{outline:0}
-#send-message button{position:absolute;top:0;height:1em;}
+#send-message button{position:absolute;top:0;height:2em;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #8ac147), color-stop(1, #8ac147));background:-webkit-linear-gradient(top, #8ac147 0%, #8ac147 100%);background:-moz-linear-gradient(top, #8ac147 0%, #8ac147 100%);background:linear-gradient(top, #8ac147 0%, #8ac147 100%);color:#fff;border:#333126;text-shadow:1px 1px 3px rgba(0,0,0,0.50);}
 #send-message button.send{right:5em}
 #send-message button.cancel{right:0}
 button{margin:0;-webkit-user-select:none;-moz-user-select:none;user-select:none;display:inline-block;text-decoration:none;background:#43a1f7;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #43a1f7), color-stop(1, #377ad0));background:-webkit-linear-gradient(top, #43a1f7 0%, #377ad0 100%);background:-moz-linear-gradient(top, #43a1f7 0%, #377ad0 100%);background:linear-gradient(top, #43a1f7 0%, #377ad0 100%);border:1px solid #2e70c4;-webkit-border-radius:16px;-moz-border-radius:16px;border-radius:16px;color:#fff;font-family:"lucida grande",sans-serif;font-size:11px;font-weight:normal;line-height:1;padding:3px 10px 5px 10px;text-align:center;text-shadow:0 -1px 1px #2d6dc0;}
@@ -39,7 +39,7 @@ button:focus,button.focus{outline:none;-webkit-box-shadow:0 1px 0 0 rgba(255,255
 #chatmenu .toggle{color:#fff;cursor:pointer;display:inline-block;position:relative;opacity:.4;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);text-decoration:none;-webkit-transition:opacity .4s linear;-moz-transition:opacity .4s linear;transition:opacity .4s linear;width:72px;height:72px;}
 #chatmenu .toggle:hover{opacity:1;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)}
 #chatmenu .toggle .count{position:absolute;top:0;left:0}
-.deck-container .gist{color:#c3cc88;}
+.deck-container .gist{color:#c3cc88;position:relative;}
 .deck-container .gist div{padding:0;margin:0}
 .deck-container .gist .gist-file{border:1px solid rgba(138,193,71,0.80);font-family:Monaco,'Andale Mono','Lucida Console','Bitstream Vera Sans Mono','Courier New',monospace,serif;margin-bottom:1em;}
 .deck-container .gist .gist-file .gist-meta{overflow:hidden;font-size:85%;padding:.5em;color:#111;background-color:rgba(138,193,71,0.80);}
@@ -58,7 +58,7 @@ button:focus,button.focus{outline:none;-webkit-box-shadow:0 1px 0 0 rgba(255,255
 .deck-container .gist .gist-file .gist-syntax{background:#353129;}
 .deck-container .gist .gist-file .gist-syntax pre .c{color:#998;font-style:italic}
 .deck-container .gist .gist-file .gist-syntax pre .err{color:#a61717;background-color:#e3d2d2;}
-.deck-container .gist .gist-file .gist-syntax pre .k{color:#000;font-weight:bold;}
+.deck-container .gist .gist-file .gist-syntax pre .k{color:#8ac147;font-weight:bold;}
 .deck-container .gist .gist-file .gist-syntax pre .o{color:#fff;font-weight:400;}
 .deck-container .gist .gist-file .gist-syntax pre .cm{color:#998;font-style:italic;}
 .deck-container .gist .gist-file .gist-syntax pre .cp{color:#999;font-weight:bold;}
@@ -255,6 +255,8 @@ body.deck-container .deck-status{position:fixed}
 .deck-container .goto-form input{-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px}
 .deck-container > .slide{background-color:transparent;background-image:none;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;}
 .deck-container > .slide h1{margin:25% 0 0 10%;line-height:.85em;text-align:right;text-shadow:2px 2px 5px rgba(0,0,0,0.30)}
+.deck-container > .slide > .video{display:none}
+.deck-container > .slide.deck-current > .video{display:block}
 .deck-container > .slide.intro{background-image:url("/images/nodejs-1280x1024.png")}
 .deck-container > .slide.logo1{background-image:url("/images/nodejs-green-logo.png");background-color:#80be58;background-position:20% center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
 .deck-container > .slide.logo1 h1{margin-top:0;margin-left:30%}
@@ -270,6 +272,8 @@ body.deck-container .deck-status{position:fixed}
 .deck-container > .slide.on-slide-complete ::selection{background:#3f4138 !important;color:#fff !important}
 .deck-container .features{float:left;font-size:.8em;}
 .deck-container .features:first-child{margin-right:1em}
+.deck .video{display:none}
+.deck-current .video{display:block}
 .csstransitions.csstransforms .deck-container .slide{-webkit-transition-property:transform,-webkit-transform;-moz-transition-property:transform,-webkit-transform;transition-property:transform,-webkit-transform;-webkit-transition-duration:.8s,.4s,.4s;-moz-transition-duration:.8s,.4s,.4s;transition-duration:.8s,.4s,.4s;-webkit-transition-timing-function:linear;-moz-transition-timing-function:linear;transition-timing-function:linear}
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide{position:absolute;top:0;left:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;width:100%;padding:0 48px;}
 .csstransitions.csstransforms .deck-container:not(.deck-menu) > .slide .slide{position:relative;left:0;top:0;opacity:0;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);-webkit-transform:scale(.5,.5,.5);-moz-transform:scale(.5,.5,.5);transform:scale(.5,.5,.5)}

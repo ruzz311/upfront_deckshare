@@ -3,11 +3,12 @@ section#preface.slide.intro
 	a( href="http://upfront_deckshare.nodester.com" ) upfront_deckshare.nodester.com
 
 section#howie-d.slide.media
-	div.video
-		iframe( width="100%", height="100%", src="http://www.youtube.com/embed/g1ycCFVKSg4?autoplay=1#t=20s", frameborder="0", allowfullscreen )
+	article.video
+		div#howieVid
+			//-iframe( width="100%", height="100%", src="http://www.youtube.com/embed/g1ycCFVKSg4?autoplay=1#t=20s", frameborder="0", allowfullscreen )
 
 section#helloNode.slide.logo2
-	h1 Hello, <br/> my name is...
+	h1 Hello, my <br/>name is...
 
 section#helloNode-evented.slide
 	blockquote	
@@ -20,31 +21,31 @@ section#helloNode-evented.slide
 
 section#helloNode-evented-example.slide
 	blockquote
-		h2 Callbacks
+		h2 Evented = Callback City
 		article.slide
-			script( src="https://gist.github.com/1413886.js?file=jquery-callback" )
+			script( src="https://gist.github.com/1413886.js?file=jquery-callback.js" )
 
 		article.slide
-			script( src="https://gist.github.com/1414059.js?file=file-list" )
+			script( src="https://gist.github.com/1414059.js?file=file-list.js" )
 			
 section#helloNode-install.slide	
 	blockquote
 		h2 Hello, I make it easy to...
 		ul
-			li nvm now, thank yourself later ( ruby guys know whats up )
-			li package files and how they make dependency easy
-			li simple server example now what?
-			ul.slide: li Modules
+			li nvm now, thank yourself later ( #{ "ruby guys know what's up" } )
+			li Package files for easy dependency tracking
+			li Simple server example now what?
 
 section#helloNode-module.slide
 	blockquote
 		h2 Modules
-		article.slide
-			script(	src="https://gist.github.com/1414127.js?file=module-example" )
+		article
+			script(	src="https://gist.github.com/1414127.js?file=module-example.js" )
+			script(	src="https://gist.github.com/1417083.js?file=maths-example.js" )
 
 section#tools-express.slide
 	blockquote
-		h2 Tools for success
+		h2 Tools for Success
 		h3 Express yourself
 		div#tools-express-features.slide
 			ul.features
@@ -64,30 +65,69 @@ section#tools-express.slide
 
 section#tools-express1.slide
 	blockquote
-		h2 Express Routes example
-		script( src="https://gist.github.com/1414413.js?file=routes" )
+		h2 Tools for Success
+		h3 Express Routes Example
+		script( src="https://gist.github.com/1414413.js?file=routes.js" )
+
+section#tools-templates.slide
+	blockquote
+		h2 Tools for Success
+		h3 Template Engines
+		ul
+			li .ejs
+			li .jade
+			li .handlebars( moustache )
+			li ... the list goes on
+
+section#tools-templates-jade.slide
+	blockquote
+		h2 Tools for Success
+		h3 Template Engines
+	ul.features( style="margin-right:5em" )
+		li client-side support
+		li great readability
+		li flexible indentation
+		li block-expansion
+		li mixins
+		li static includes
+		li attribute interpolation
+		li contextual error reporting at compile & run time
+		li executable for compiling jade templates via the command line
+	ul.features
+		li optional memory caching
+		li combine dynamic and static tag classes
+		li parse tree manipulation via filters
+		li template inheritance
+		li supports Express JS out of the box
+		li transparent iteration over objects, arrays, and even non-enumerables via each
+		li block comments
+		li no tag prefix
+		li filters
+			ul
+				li=":stylus, :sass, :less, :markdown, :cdata, :coffeescript"
+section#tools-stylus.slide
+	blockquote
+		h2 Tools for Success
+		h3 Stylus
+		p.slide Expressive dynamic robust CSS
+		p.slide Flexible markup that is clean
+		p.slide NIB Framework
 
 section#tools-sockets.slide
 	blockquote
-		h2 Tools for success
+		h2 Tools for Success
 		h3 Socket to me
 		p.slide Real-time, two-way connection to the server-side
-			
+		p.slide	Enables single-page apps without dealing with $.ajax
+		p.slide	It's all about routes and callbacks	
 
 section#why.slide	
-	h2 Why should I use node when I've got <language here>
-	ul
-		li Node: I'm so excited I think I just wet myself alittle.
-		li Heavy data processing
-		li Feed users processed data
-
-section.slide
-	:markdown
-		> This is the first level of quoting.
-		>
-		> > This is nested blockquote.
-		>
-		> Back to the first level.
+	blockquote
+		h2 Why should I use node when I've got &lt;language here&gt;
+		ul
+			li Node: I'm so excited I think I just wet myself a little.
+			li Heavy data processing
+			li Feed users processed data
 
 section#complete.slide
 	h2 Useful Links

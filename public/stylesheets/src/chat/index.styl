@@ -11,7 +11,7 @@
   bottom 1%
   left auto
   right 1%
-  width 500px
+  width 30em
   transition-property: transform, -webkit-transform
   transition-duration: .8s, 0.4s, 0.4s
   transition-timing-function: linear
@@ -137,13 +137,17 @@
     padding 0 1%
     line-height 30px
     vertical-align middle
-    width 12em
+    width 16em
     &:focus
       outline 0
   button
     position absolute
     top 0px
-    height 1em
+    height 2em
+    background linear-gradient(top, rgb(138, 193, 71) 0%, rgb(138, 193, 71) 100%)
+    color #fff
+    border rgba( 51,49,38, 1 )
+    text-shadow 1px 1px 3px rgba( 0,0,0, .5)
     &.send
       right 5em
     &.cancel
