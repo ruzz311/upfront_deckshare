@@ -1,5 +1,3 @@
-
-
 var Deck = {
 
 	init : function( ) {
@@ -8,8 +6,8 @@ var Deck = {
 		Deck.videos();
 
 		// Current slide reporting
-		$( document ).bind('deck.change', function( event, from, to ) {
-			Chat.socket.emit( 'deck/change', { "from":from, "to":to  } );		
+		$( document ).bind( 'deck.change', function( event, from, to ) {
+			Chat.socket.emit( 'deck/change', { "from":from, "to":to  } );	
 		});
 	},
 

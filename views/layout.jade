@@ -3,11 +3,12 @@ html
 	head
 		title=title
 		meta( name="author", content="Russell Madsen" )
+		meta( name="keywords", content="" )
 		link( rel="stylesheet", type="text/css", href="/stylesheets/base.css" )
 		script( src="/lib/modernizr.custom.js" )
 		block scripts
 		
-	body( class="deck-container")
+	body( class="deck-container" )
 
 		block content
 			!= body	
@@ -17,9 +18,9 @@ html
 		#footer
 			script( src="/socket.io/socket.io.js" )
 			script( src="/lib/jquery-1.7.min.js" )
+			script( src="/javascripts/swfobject.js" )
 			script( src="/lib/deckjs/core/deck.core.js" )
 			script( src="/javascripts/chat.js" )
-			script( src="/javascripts/swfobject.js" )
 			script( type="text/javascript" )
 				var _gaq = _gaq || [];
 				_gaq.push(['_setAccount', 'UA-3121339-9']);

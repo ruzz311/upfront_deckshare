@@ -76,12 +76,32 @@
   #nicknames
     background #ccc
     padding 1% 1% 2%
-    font .7em Helvetica
+    font .5em Helvetica, Arial
     position absolute
-    right 0
     top 0
-    bottom 1em
+    right 0
+    bottom 14%
     left 70%
+    overflow-x auto
+    &::-webkit-scrollbar
+      width 6px
+      height 6px
+    &::-webkit-scrollbar-button:start:decrement, ::-webkit-scrollbar-button:end:increment
+      display block
+      height 10px
+    &::-webkit-scrollbar-button:vertical:increment
+      background-color #fff
+    &::-webkit-scrollbar-track-piece
+      background-color #fff
+      -webkit-border-radius 3px
+    &::-webkit-scrollbar-thumb:vertical
+      height 50px
+      background-color #ccc
+      -webkit-border-radius 3px
+    &::-webkit-scrollbar-thumb:horizontal
+      width 50px
+      background-color #fff
+      -webkit-border-radius 3px
     span
       color black
       display block
@@ -137,7 +157,7 @@
     padding 0 1%
     line-height 30px
     vertical-align middle
-    width 16em
+    width 72%
     &:focus
       outline 0
   button
@@ -177,3 +197,4 @@ button
       position absolute
       top 0
       left 0
+      font-size .5em

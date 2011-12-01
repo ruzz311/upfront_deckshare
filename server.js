@@ -8,7 +8,6 @@ var express = require( 'express' ),
     nib = require( 'nib' )();    
 var app = module.exports = express.createServer(),
     basicAuth = express.basicAuth;
-
 var appdir = { 
     root    : __dirname,
     views   : __dirname + '/views',
@@ -95,7 +94,6 @@ app.configure( 'production', function( ) {
   });
 
 // Start Servers
-
   // Express
   app.listen( 12772 );
   console.log( "Express server listening on port %d in %s mode", app.address().port, app.settings.env );

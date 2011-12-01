@@ -1,6 +1,7 @@
 var Chat = {
 
 	new_msg : 0,
+	welcome_msg : "Thanks for visiting, feel free to ask questions or chat with each other about the weird guy at the front of the room.",
 	$el : function( ) { return $('#chat'); },
 	icon_notify : function( ) {
 		var msg = ( Chat.new_msg === 0 ) ? '' : Chat.new_msg;
@@ -25,6 +26,7 @@ var Chat = {
 			if ( !set ) {
 				Chat.nickname = $('#nick').val();
 				Chat.clear();
+				Chat.announcement( Chat.welcome_msg );
 				return $('#chat').addClass('nickname-set');
 			}
 			$('#nickname-err').css('visibility', 'visible');
@@ -41,7 +43,7 @@ var Chat = {
 			Chat.new_msg++;
 			Chat.icon_notify();
 		}
-		$('#lines').append( $('<p>').append( $('<b>').text(from), msg) );
+		$('#lines').append( $('<p class="'+from+'">').append( $('<b>').text(from), msg) );
 	},
 	send_message : function( ) {
 		var msg = $( '#message' ).val();
@@ -63,12 +65,10 @@ var Chat = {
 	},
 	connect : function() {
 		$('#chat').addClass('connected');
-		//if( Chat.nickname === undefined )
-		//	Chat.generate_nick();
 	},
 	reconnect : function( nicknames ) {
 		$('#lines').empty();
-		print_nicks( nicknames );
+		Chat.print_nicks( nicknames );
 		Chat.message('System', 'Reconnected to the server');
 	},
 	reconnecting : function() { Chat.message('System', 'Attempting to re-connect to the server'); },

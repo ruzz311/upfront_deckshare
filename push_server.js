@@ -36,4 +36,4 @@ module.exports = function( app ) {
 
   return io;
 
-};
+};;

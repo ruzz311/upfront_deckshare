@@ -13,7 +13,13 @@
 #messages p{padding:0;margin:0;font:12px Helvetica,Arial;padding:5px 10px;}
 #messages p b{display:inline-block;padding-right:10px;font-weight:bold}
 #messages p:nth-child(even){background:#fafafa}
-#messages #nicknames{background:#ccc;padding:1% 1% 2%;font:.7em Helvetica;position:absolute;right:0;top:0;bottom:1em;left:70%;}
+#messages #nicknames{background:#ccc;padding:1% 1% 2%;font:.5em Helvetica,Arial;position:absolute;top:0;right:0;bottom:14%;left:70%;overflow-x:auto;}
+#messages #nicknames::-webkit-scrollbar{width:6px;height:6px}
+#messages #nicknames::-webkit-scrollbar-button:start:decrement,#messages #nicknames ::-webkit-scrollbar-button:end:increment{display:block;height:10px}
+#messages #nicknames::-webkit-scrollbar-button:vertical:increment{background-color:#fff}
+#messages #nicknames::-webkit-scrollbar-track-piece{background-color:#fff;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#ccc;-webkit-border-radius:3px}
+#messages #nicknames::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#fff;-webkit-border-radius:3px}
 #messages #nicknames span{color:#000;display:block;width:100%}
 #messages #nicknames b{display:block;color:#333;padding:3px 6px;text-shadow:0 1px 0 #666;width:auto;}
 #messages #nicknames b.me{cursor:pointer;color:#fff;background:#999;margin-right:5px;-webkit-border-radius:10px;-moz-border-radius:10px;border-radius:10px;text-shadow:0 1px 0 #666;}
@@ -26,7 +32,7 @@
 #messages #lines::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#ccc;-webkit-border-radius:3px}
 #messages #lines::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#fff;-webkit-border-radius:3px}
 #send-message{background:#fff;position:relative;}
-#send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:16em;}
+#send-message input{border:none;height:2em;padding:0 1%;line-height:30px;vertical-align:middle;width:72%;}
 #send-message input:focus{outline:0}
 #send-message button{position:absolute;top:0;height:2em;background:-webkit-gradient(linear, left top, left bottom, color-stop(0, #8ac147), color-stop(1, #8ac147));background:-webkit-linear-gradient(top, #8ac147 0%, #8ac147 100%);background:-moz-linear-gradient(top, #8ac147 0%, #8ac147 100%);background:linear-gradient(top, #8ac147 0%, #8ac147 100%);color:#fff;border:#333126;text-shadow:1px 1px 3px rgba(0,0,0,0.50);}
 #send-message button.send{right:5em}
@@ -38,8 +44,8 @@ button:focus,button.focus{outline:none;-webkit-box-shadow:0 1px 0 0 rgba(255,255
 #chatmenu{position:absolute;bottom:0;right:0;z-index:200;}
 #chatmenu .toggle{color:#fff;cursor:pointer;display:inline-block;position:relative;opacity:.4;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=40);text-decoration:none;-webkit-transition:opacity .4s linear;-moz-transition:opacity .4s linear;transition:opacity .4s linear;width:72px;height:72px;}
 #chatmenu .toggle:hover{opacity:1;filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=100)}
-#chatmenu .toggle .count{position:absolute;top:0;left:0}
-.deck-container .gist{color:#c3cc88;position:relative;}
+#chatmenu .toggle .count{position:absolute;top:0;left:0;font-size:.5em}
+.deck-container .gist{color:#c3cc88;position:relative;font-size:.65em;}
 .deck-container .gist div{padding:0;margin:0}
 .deck-container .gist .gist-file{border:1px solid rgba(138,193,71,0.80);font-family:Monaco,'Andale Mono','Lucida Console','Bitstream Vera Sans Mono','Courier New',monospace,serif;margin-bottom:1em;}
 .deck-container .gist .gist-file .gist-meta{overflow:hidden;font-size:85%;padding:.5em;color:#111;background-color:rgba(138,193,71,0.80);}
@@ -50,7 +56,7 @@ button:focus,button.focus{outline:none;-webkit-box-shadow:0 1px 0 0 rgba(255,255
 .deck-container .gist .gist-file .gist-data pre{font-family:'Bitstream Vera Sans Mono','Courier',monospace;background:transparent !important;margin:0 !important;border:none !important;padding:.25em !important}
 .deck-container .gist .gist-file .gist-data .gist-highlight{background:transparent !important;}
 .deck-container .gist .gist-file .gist-data .gist-highlight pre{counter-reset:linenumbers;}
-.deck-container .gist .gist-file .gist-data .gist-highlight pre div{padding:0 1.5em;}
+.deck-container .gist .gist-file .gist-data .gist-highlight pre div{padding:0 2em;}
 .deck-container .gist .gist-file .gist-data .gist-highlight pre div:nth-child(odd){background-color:rgba(255,255,255,0.03)}
 .deck-container .gist .gist-file .gist-data .gist-highlight pre div:before{background:rgba(255,255,255,0.03);border-right:1px solid rgba(138,193,71,0.25);color:rgba(138,193,71,0.50);content:counter(linenumbers);counter-increment:linenumbers;padding:0 .25em 0 .25em;position:absolute;left:0;text-align:right;width:1.4em}
 .deck-container .gist .gist-file .gist-data .gist-line-numbers{background-color:#ececec;color:#aaa;border-right:1px solid #ddd;text-align:right;}
@@ -256,7 +262,7 @@ body.deck-container .deck-status{position:fixed}
 .deck-container{font-size:2em;}
 .deck-container > .slide{background-color:transparent;background-image:none;background-repeat:no-repeat;background-position:center center;background-attachment:fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;}
 .deck-container > .slide h1{margin:25% 0 0 10%;line-height:.85em;font-size:3em;text-align:right;text-shadow:2px 2px 5px rgba(0,0,0,0.30)}
-.deck-container > .slide h2{font-size:3em}
+.deck-container > .slide h2{font-size:2.5em}
 .deck-container > .slide > .video{display:none}
 .deck-container > .slide.deck-current > .video{display:block}
 .deck-container > .slide.intro{background-image:url("/images/nodejs-1280x1024.png")}
@@ -269,6 +275,7 @@ body.deck-container .deck-status{position:fixed}
 .deck-container > .slide#complete{background-color:#80be58;background-image:url("/images/nodejs-green-logo.png");background-position:bottom center;-webkit-background-size:initial;-moz-background-size:initial;background-size:initial;}
 .deck-container > .slide#complete h2{color:#fff;border-bottom-color:#3f413b;text-shadow:3px 3px 3px rgba(0,0,0,0.30)}
 .deck-container > .slide#complete a{color:#fff;font-weight:700}
+.deck-container > .slide#complete .features{width:30%}
 .deck-container > .slide#tools h1{line-height:1em;font-size:3em;margin-left:57%;text-transform:uppercase;text-align:left}
 .deck-container > .slide.on-slide-complete ::-moz-selection{background:#3f4138 !important;color:#fff !important}
 .deck-container > .slide.on-slide-complete ::selection{background:#3f4138 !important;color:#fff !important}
