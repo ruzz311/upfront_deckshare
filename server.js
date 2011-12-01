@@ -5,7 +5,7 @@ require.paths.unshift( './node_modules' );
 var express = require( 'express' ),
     stylus = require( 'stylus' ),
     crypto = require( 'crypto' ),
-    nib = require( 'nib' )();    
+    nib = require( 'nib' )();
 var app = module.exports = express.createServer(),
     basicAuth = express.basicAuth;
 var appdir = { 
@@ -15,7 +15,7 @@ var appdir = {
   };
 var Security = {
   simple_auth : express.basicAuth( function( user, pass ) { 
-      return ( user=='user' && pass=="pass" ) ? true : false;
+      return ( user=='ruzz311' && pass=="upfront2011" ) ? true : false;
     }, "Restricted to current presenter" )
 };
 

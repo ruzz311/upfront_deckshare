@@ -2,7 +2,7 @@ var Chat = {
 
 	new_msg : 0,
 	welcome_msg : "Thanks for visiting, feel free to ask questions or chat with each other about the weird guy at the front of the room.",
-	$el : function( ) { return $('#chat'); },
+	$el : function( ) { return $( '#chat' ); },
 	icon_notify : function( ) {
 		var msg = ( Chat.new_msg === 0 ) ? '' : Chat.new_msg;
 		$('#chatmenu .toggle .count').text( msg );
@@ -76,10 +76,12 @@ var Chat = {
 
 };
 
-$(function(){
+$(function() {
+
 	// Sockets for Chat and Presenter control
 	Chat.socket = io.connect( );
-	//Chat.socket = new io.connect(null, {port: 80, rememberTransport: false}); 
+
+	// Socket routing
 	Chat.socket.on( 'connect',			Chat.connect );
 	Chat.socket.on( 'chat/announcement',Chat.announcement );
 	Chat.socket.on( 'chat/nicknames',	Chat.print_nicks );
@@ -108,7 +110,7 @@ $(function(){
 		$( '#chat' ).toggleClass( 'visible' );
 	});
 
-	// System
+	// link to slides in chat window provided by preseneter
 	$( '#chat a.goto' ).live( 'click', function(e){ 
 		e.preventDefault();
 		var slide = parseInt( $( this ).attr( 'rel' ), 10 );
