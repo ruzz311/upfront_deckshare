@@ -15,7 +15,10 @@ module.exports = function( app ) {
     });
 
     socket.on('chat/nickname', function( nick, fn ) {
-      if ( nicknames[ nick ] ) {
+      var invalid_nick =  ( nick == "Russell" || nick == "System" || nick == "upfront" );
+      if( invalid_nick ){
+        fn( true );
+      } else if ( nicknames[ nick ] ) {
         fn( true );
       } else {
         fn( false );
@@ -32,8 +35,14 @@ module.exports = function( app ) {
       socket.broadcast.emit( 'deck/slide change', slide.to );
     });
     
+    socket.on('disconnect', function () {
+      if (!socket.nickname) return;
+
+      delete nicknames[socket.nickname];
+      socket.broadcast.emit('announcement', socket.nickname + ' disconnected');
+      socket.broadcast.emit('nicknames', nicknames);
+    });
+    
   });
-
   return io;
-
-};;
+};
