@@ -1,12 +1,9 @@
 var Chat = {
-
 	new_msg : 0,
 	welcome_msg : "Thanks for visiting, feel free to ask questions or chat with each other about the weird guy at the front of the room.",
+
 	$el : function( ) { return $( '#chat' ); },
-	icon_notify : function( ) {
-		var msg = ( Chat.new_msg === 0 ) ? '' : Chat.new_msg;
-		$('#chatmenu .toggle .count').text( msg );
-	},
+	
 	print_nicks : function( nicknames ) {
 		console.log( "nicknames = ", nicknames );
 		var css_class="";
@@ -20,6 +17,7 @@ var Chat = {
 			$('#nicknames').append( newelm );
 		}
 	},
+
 	set_nick : function( ev ) {
 		ev.preventDefault();
 		Chat.socket.emit('chat/nickname', $('#nick').val(), function ( set ) {
@@ -33,44 +31,57 @@ var Chat = {
 		});
 		return false;
 	},
+
 	generate_nick : function( ) {
 		Chat.nickname = 'User_'+ Math.round( Math.random() * 9999  );
 		$( '#nick' ).val( Chat.nickname );
 		$( '#set-nickname' ).submit();
 	},
+
+	icon_notify : function( ) {
+		var msg = ( Chat.new_msg === 0 ) ? '' : Chat.new_msg;
+		$('#chatmenu .toggle .count').text( msg );
+	},
+
 	message : function( from, msg ) {
+
 		if( $('#chat').is( ':hidden' ) ){
 			Chat.new_msg++;
 			Chat.icon_notify();
 		}
-		$('#lines').append( $('<p class="'+from+'">').append( $('<b>').text(from), msg) );
+
+		var new_line = $('<p class="'+from+'"/>').append( $('<b/>').text(from), msg );
+		$('#lines').append( new_line );
+
 	},
+
+
 	send_message : function( ) {
-		var msg = $( '#message' ).val();
-		if( $( '#message' ).val().length > 0 ){
+
+		if( $( '#message' ).val().length > 0 ) {
 			Chat.socket.emit( 'chat/user message', msg );
-			Chat.message( 'me', msg );
+			Chat.message( 'me', $( '#message' ).val() );
 			Chat.clear();
 			$( '#lines' ).get(0).scrollTop = 10000000;
 		}
+
 		return false;
 	},
-	clear : function() {
-		$('#message').val( '' ).focus();
-	},
+
 	announcement : function( msg ) {
 		$('#lines').append( $( '<p>' ).append( $( '<em>' ).html( msg ) ) );
 		Chat.new_msg++;
 		Chat.icon_notify();
 	},
-	connect : function() {
-		$('#chat').addClass('connected');
-	},
+
 	reconnect : function( nicknames ) {
 		$('#lines').empty();
 		Chat.print_nicks( nicknames );
 		Chat.message('System', 'Reconnected to the server');
 	},
+
+	clear : function() { $('#message').val( '' ).focus(); },
+	connect : function() { $('#chat').addClass('connected'); },
 	reconnecting : function() { Chat.message('System', 'Attempting to re-connect to the server'); },
 	error : function( e ) { Chat.message('System', e ? e : 'A unknown error occurred'); }
 
@@ -116,4 +127,5 @@ $(function() {
 		var slide = parseInt( $( this ).attr( 'rel' ), 10 );
 		$.deck('go', slide);
 	});
+
 });
