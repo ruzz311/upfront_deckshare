@@ -1,12 +1,14 @@
 {
-    "name"		: "upfront_deskshare"
-  , "version"	: "0.0.1"
-  , "private"	: false
+    "name"		    : "upfront_deskshare"
+  , "version"	    : "0.0.2"
+  , "description"	: "Example nodejs app and slides"
   , "dependencies": {
       "express"		: "2.4.6"
-    , "stylus"		: ">= 0.0.1"
     , "jade"		: ">= 0.0.1"
-    , "socket.io"	: ">= 0.8.7"
-    , "nib"			: ">= 0.0.1"
+    , "nano"     : ">= 1.2.1"
+    , "nib"			: ">= 0.3.1"
+    , "sanitizer": "0.0.14"
+    , "socket.io" : ">= 0.8.7"
+    , "stylus"    : ">= 0.19.5"
   }
 }

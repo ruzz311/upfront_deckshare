@@ -59,6 +59,7 @@ var Chat = {
 	send_message : function( ) {
 
 		if( $( '#message' ).val().length > 0 ) {
+			var msg = $( '#message' ).val();
 			Chat.socket.emit( 'chat/user message', msg );
 			Chat.message( 'me', $( '#message' ).val() );
 			Chat.clear();
