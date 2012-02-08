@@ -1,21 +1,23 @@
 
-var VARS = require( __dirname+'/settings.js' ).VARS;
-
 /**
  * Socket.IO server (single process only)
  */
 var sio = require( 'socket.io' ),
 		sanitizer = require( 'sanitizer' ),
-		db = require( 'nano' )( 'http://'+VARS.DB.user+':'+VARS.DB.pass+'@madsendev.iriscouch.com:5984/deckshare' );
+		cfg = require( './couch_cfg' ),
+		db = require( 'nano' )( cfg.url+'/deckshare' );
 
-function trackActivity( obj ){
-	/*
+
+//This tracks chat activity to couchDB, comment it out or
+//create your own config (install nano and look at ~/nano/cfg/couch.example.js)
+var trackActivity = function ( obj ){
+
 	db.insert( obj, function(e,b,h){
 		if(e) { throw e; }
 		console.log( "message saved to DB" );
 	});
-	*/
-}
+
+};
 
 
 module.exports = function( app ) {
